@@ -1,14 +1,16 @@
-
-    </html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>SACE - Stride Action Community Empowerment</title>
-    <!-- Font Awesome 6 (Free Icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta name="description" content="Stride Action Community Empowerment (SACE) - Empowering communities in Uganda through education, health, youth empowerment, and sustainable development. Join us to make a lasting impact.">
+    <meta name="keywords" content="NGO Uganda, community empowerment, education, health, youth skills, donate, volunteer, SACE, Arua, West Nile">
+    <meta name="theme-color" content="#0096c7">
+    <title>SACE | Stride Action Community Empowerment – Driving Sustainable Change</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts: Inter + Poppins for modern clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,57 +19,160 @@
         }
 
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #e55a2b;
-            --secondary: #0A4C6E;
-            --accent: #F9C74F;
-            --accent-light: #FFE5B4;
-            --light-bg: #F1FAFE;
+            --cyan-deep: #f4a261;
+            --cyan-dark: #023e8a;
+            --cyan-light: #caf0f8;
+            --accent: #f4a261;    /* warm orange accent for contrast */
+            --accent-soft: #ffe8d6;
             --white: #ffffff;
-            --dark: #1E2F3A;
-            --success: #4CAF50;
-            --shadow-sm: 0 8px 20px rgba(0,0,0,0.08);
-            --shadow-md: 0 12px 28px rgba(0,0,0,0.12);
-            --border-radius: 1.25rem;
+            --gray-50: #f8fafc;
+            --gray-200: #e9ecef;
+            --dark: #1a2c3e;
+            --shadow-sm: 0 8px 20px rgba(0,0,0,0.05);
+            --shadow-md: 0 20px 30px -12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 30px 40px -16px rgba(0,0,0,0.15);
+            --radius-xl: 2rem;
+            --radius-lg: 1.25rem;
         }
 
-        body{
+        body {
             font-family: 'Inter', sans-serif;
-            background:#1ef;
+            background: linear-gradient(145deg, #e0f7fa 0%, #1ef 100%);
             color: var(--dark);
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* ========= BACKGROUND SLIDER (HERO) ========= */
-        .hero-slider {
+        /* ========== MODERN NAVBAR ========== */
+        nav {
+            background: linear-gradient(90deg, #023e8a, #0096c7);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 52px;
+            width: 52px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .logo h2 {
+            color: white;
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: var(--accent);
+            color: #fff3e0;
+        }
+
+        .donate-nav {
+            background: var(--accent);
+            color: var(--dark) !important;
+            padding: 8px 24px !important;
+            border-radius: 40px;
+            font-weight: 800;
+            border: none;
+        }
+
+        .donate-nav:hover {
+            background: #e76f51;
+            transform: translateY(-2px);
+            border-bottom: none !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* News Ticker */
+        .news-ticker {
+            background: var(--cyan-dark);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: scrollTicker 28s linear infinite;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        @keyframes scrollTicker {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-48%); }
+        }
+
+        .ticker-label {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-weight: 800;
+            margin-right: 24px;
+        }
+
+        /* Hero Slider – Full width with cyan overlay */
+        .hero {
             position: relative;
             width: 100%;
             min-height: 90vh;
             overflow: hidden;
-            background: #000;
+            background: var(--cyan-deep);
         }
 
         .slider-container {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+            inset: 0;
         }
 
         .slide {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background-size: cover;
             background-position: center 30%;
             opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            will-change: opacity;
+            transition: opacity 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         .slide.active {
@@ -78,11 +183,8 @@
         .slide::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,40,50,0.7) 100%);
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 80, 110, 0.75), rgba(2, 62, 138, 0.85));
             z-index: 1;
         }
 
@@ -100,146 +202,52 @@
         }
 
         .hero-content h1 {
-            font-size: 3.8rem;
+            font-size: clamp(2.4rem, 5vw, 4rem);
             font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.2rem;
-            background: linear-gradient(135deg, #FFF, var(--accent));
-            background-clip: text;
+            background: linear-gradient(135deg, #fff, var(--accent));
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
-            text-shadow: none;
+            margin-bottom: 1rem;
         }
 
         .hero-content p {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             max-width: 680px;
-            margin-bottom: 2rem;
-            font-weight: 500;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+            margin: 1rem 0;
         }
 
-        .slider-controls {
+        .slider-dots {
             position: absolute;
-            bottom: 25px;
+            bottom: 30px;
             left: 0;
             right: 0;
             z-index: 15;
             display: flex;
             justify-content: center;
-            gap: 14px;
+            gap: 12px;
         }
 
-        .slider-dot {
+        .dot {
             width: 12px;
             height: 12px;
-            background: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.5);
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
 
-        .slider-dot.active-dot {
+        .dot.active-dot {
             background: var(--accent);
             width: 28px;
             border-radius: 20px;
         }
 
-        nav {
-            background: rgba(255,107,53,0.95);
-            backdrop-filter: blur(8px);
-            padding: 0.8rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-container img {
-            height: 52px;
-            width: 52px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            object-fit: cover;
-        }
-
-        nav h2 {
-            color: white;
-            font-weight: 800;
-            font-size: 1.7rem;
-            letter-spacing: -0.5px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 28px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        nav ul li a:hover {
-            border-bottom-color: var(--accent);
-            color: var(--accent-light);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .news-bar {
-            background: var(--secondary);
-            color: white;
-            padding: 10px 0;
-            overflow: hidden;
-            position: relative;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .news-content {
-            display: inline-block;
-            white-space: nowrap;
-            animation: scrollNews 20s linear infinite;
-            font-weight: 500;
-        }
-
-        @keyframes scrollNews {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .label {
-            background: var(--accent);
-            color: var(--dark);
-            padding: 4px 14px;
-            border-radius: 40px;
-            font-weight: 800;
-            margin-right: 20px;
-        }
-
+        /* General */
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
 
         section {
@@ -251,64 +259,74 @@
             font-weight: 800;
             text-align: center;
             margin-bottom: 3rem;
-            color: var(--secondary);
+            color: var(--cyan-dark);
             position: relative;
         }
 
         .section-title:after {
             content: '';
             width: 90px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            height: 5px;
+            background: linear-gradient(90deg, var(--cyan-deep), var(--accent));
             display: block;
-            margin: 0.8rem auto 0;
-            border-radius: 4px;
+            margin: 1rem auto 0;
+            border-radius: 10px;
         }
 
-        .boxes {
+        .grid-cards {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
         }
 
-        .box {
+        .card {
             background: var(--white);
-            border-radius: var(--border-radius);
+            border-radius: var(--radius-xl);
             padding: 2rem 1.8rem;
             flex: 1;
             min-width: 260px;
             max-width: 350px;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
             box-shadow: var(--shadow-sm);
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .box:hover {
-            transform: translateY(-12px);
+        .card:hover {
+            transform: translateY(-10px);
             box-shadow: var(--shadow-md);
-            border-color: var(--accent);
         }
 
-        .box i {
-            font-size: 3rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            background-clip: text;
+        .card i {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, var(--cyan-deep), var(--cyan-dark));
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
-            margin-bottom: 1.2rem;
-        }
-
-        .box h3 {
-            font-size: 1.6rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
         }
 
-        /* Ed Message Section Styles */
-        .ed-message-container {
-            background: white;
+        .impact-stats {
+            background: linear-gradient(125deg, #023e8a, #0096c7);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .ed-message-block {
+            background: var(--white);
             border-radius: 2rem;
             padding: 2.5rem;
             display: flex;
@@ -316,249 +334,190 @@
             gap: 2rem;
             align-items: center;
             box-shadow: var(--shadow-md);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .ed-image {
-            flex: 0 0 180px;
-            text-align: center;
-        }
-        .ed-image img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--accent);
-            box-shadow: var(--shadow-sm);
-        }
-        .ed-content {
-            flex: 1;
-        }
-        .ed-content h3 {
-            font-size: 1.9rem;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-        .ed-title {
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-        }
-        .ed-content blockquote {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            font-style: italic;
-            color: var(--dark);
-            border-left: 5px solid var(--accent);
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-        .ed-sign {
-            margin-top: 1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
         }
 
-        .gallery {
+        .ed-img {
+            flex: 0 0 170px;
+            text-align: center;
+        }
+
+        .ed-img img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testi-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1.8rem;
+            gap: 1.5rem;
         }
 
         .gallery-item {
-            border-radius: 1.2rem;
+            border-radius: 1.5rem;
             overflow: hidden;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1/1;
             box-shadow: var(--shadow-sm);
-            transition: transform 0.4s;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.08);
+            transform: scale(1.06);
+        }
+
+        .partner-section {
+            background: var(--cyan-light);
+            padding: 3rem 0;
+        }
+
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            align-items: center;
         }
 
         .donation-panel {
-            background: linear-gradient(115deg, var(--secondary) 0%, #0A5C7E 100%);
+            background: linear-gradient(125deg, var(--cyan-dark), var(--cyan-deep));
             border-radius: 2rem;
-            padding: 2.5rem;
-            margin-top: 2rem;
-            color: white;
+            padding: 2rem 2.5rem;
             display: flex;
             flex-wrap: wrap;
-            align-items:center;
             justify-content: space-between;
-            gap: 2rem;
+            align-items: center;
+            color: white;
         }
 
-        .donation-text h3 {
-            font-size: 1.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .donation-btn {
+        .btn-donate {
             background: var(--accent);
-            color: var(--dark);
-            font-weight: 800;
-            padding: 0.9rem 2rem;
-            border-radius: 60px;
-            font-size: 1.1rem;
-            transition: 0.2s;
             border: none;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1rem;
             cursor: pointer;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            color: var(--dark);
         }
 
-        .donation-btn:hover {
-            background: #FFD966;
-            transform: scale(1.02);
+        .btn-donate:hover {
+            background: #e76f51;
+            transform: scale(1.05);
         }
 
-        .form-container {
-            background: var(--white);
-            padding: 2rem;
+        .contact-form {
+            background: white;
             border-radius: 2rem;
-            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
         }
 
         .form-row {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
         .form-group {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
-        input, textarea, select {
+        input, select, textarea {
+            width: 100%;
             padding: 0.9rem;
             border-radius: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             font-family: inherit;
-            transition: 0.2s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255,107,53,0.2);
         }
 
         button[type="submit"] {
-            background: var(--primary);
+            background: var(--cyan-deep);
             color: white;
-            padding: 0.9rem;
             border: none;
+            padding: 1rem;
             border-radius: 2rem;
             font-weight: 700;
             cursor: pointer;
+            width: 100%;
             transition: 0.2s;
         }
 
         button[type="submit"]:hover {
-            background: var(--secondary);
+            background: #e76f51;
         }
 
         .map-wrapper {
-            margin-top: 2.5rem;
-            border-radius: 2rem;
+            margin-top: 2rem;
+            border-radius: 1.5rem;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 2px solid white;
-            background: #eef2f5;
         }
-        .map-wrapper iframe {
-            width: 100%;
-            height: 380px;
-            border: 0;
-            display: block;
+
+        .map-links {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
         }
-        .map-caption {
-            text-align: center;
-            margin-top: 0.6rem;
-            font-weight: 500;
-            color: var(--secondary);
-            background: rgba(255,255,240,0.8);
-            display: inline-block;
-            padding: 0.2rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-        }
-        .map-link-btn {
+
+        .map-links a {
+            background: var(--cyan-light);
+            color: var(--cyan-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: var(--primary);
+            gap: 0.5rem;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .map-links a:hover {
+            background: var(--cyan-dark);
             color: white;
-            text-decoration: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 60px;
-            font-weight: 700;
-            margin-top: 0.8rem;
-            transition: 0.2s;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .map-link-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-        .social-links a {
-            background: #f0f2f5;
-            margin: 0 8px;
-            padding: 8px 14px;
-            border-radius: 40px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .social-links a:hover {
-            background: var(--accent);
-            color: var(--dark);
+            border-color: var(--accent);
         }
 
-        footer {
-            background: var(--dark);
-            color: #ddd;
-            padding: 2.5rem 1rem;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            margin: 0 12px;
-            text-decoration: none;
-        }
-
-        .whatsapp, .donate-float {
+        /* Floating buttons */
+        .whatsapp-float, .donate-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #25D366;
             width: 56px;
             height: 56px;
+            background: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-size: 28px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: 0.2s;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
             z-index: 999;
             text-decoration: none;
         }
@@ -567,152 +526,62 @@
             bottom: 100px;
             background: var(--accent);
             color: var(--dark);
-            font-weight: bold;
-            font-size: 24px;
         }
 
-        .whatsapp:hover, .donate-float:hover {
-            transform: scale(1.08);
-        }
-
-        /* MODAL STYLES */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.2s, opacity 0.2s;
-        }
-        .modal-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        .modal-container {
-            background: white;
-            max-width: 520px;
-            width: 90%;
-            border-radius: 2rem;
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            animation: fadeUp 0.3s ease;
-        }
-        @keyframes fadeUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .modal-header {
-            background: var(--primary);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .modal-header h3 {
-            font-size: 1.5rem;
-            margin: 0;
-        }
-        .modal-close {
-            font-size: 28px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: white;
-        }
-        .modal-body {
-            padding: 1.8rem;
-        }
-    
-    
-        
-            
-        .badge-active {
-            background: #4CAF50;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-        .force-logout-btn {
-            background: #e53e3e;
-            border: none;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 0.7rem;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background: var(--primary);
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                padding: 1.5rem;
-                gap: 1rem;
-                text-align: center;
-                box-shadow: 0 15px 20px rgba(0,0,0,0.1);
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero-content h1 {
-                font-size: 2.4rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .map-wrapper iframe {
-                height: 280px;
-            }
-            .ed-message-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .ed-content blockquote {
-                border-left: none;
-                padding-left: 0;
-                border-top: 3px solid var(--accent);
-                padding-top: 1rem;
-            }
+        footer {
+            background: #023e8a;
+            color: #caf0f8;
+            padding: 2.5rem 1rem;
+            text-align: center;
         }
 
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
+
         .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .mt-2 { margin-top: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: var(--cyan-deep);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 2rem;
+                gap: 1rem;
+                text-align: center;
+                z-index: 999;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo-container">
-        <img src="images/IMG-20260319-WA0027.jpg" alt="SACE Logo" onerror="this.src='https://via.placeholder.com/52?text=SACE'">
+    <div class="logo">
+        <img src="images/IMG-20260319-WA0027.jpg" alt="SACE Logo" onerror="this.src='https://placehold.co/200x200/0096c7/white?text=SACE'">
         <h2>SACE</h2>
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="menu-toggle" id="mobileMenuBtn">
         <i class="fas fa-bars"></i>
     </div>
-    <ul id="menu">
+    <ul class="nav-links" id="navMenu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -720,146 +589,311 @@
         <li><a href="#ed-message">Ed's Message</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#donate" id="navDonateLink" style="background:var(--accent); color:var(--dark); padding:6px 16px; border-radius:40px;">Donate</a></l>
-        
+        <li><a href="#" class="donate-nav" id="navDonateBtn">Donate</a></li>
     </ul>
 </nav>
 
-<div class="news-bar">
-    <div class="news-content">
-        <span class="label">✨ NEW INITIATIVE</span> 🌍 Join our clean water campaign & youth skill hubs | 📢 Volunteers needed | 💡 Empowering 500+ youths in 2025 | 🎉 SACE Anniversary Gala
+<div class="news-ticker">
+    <div class="ticker-content">
+        <span class="ticker-label">✨ BREAKING</span> 🚰 New borehole in Ayivu | 🎓 120 children back to school | 💡 Digital skills training for 100 youth | 🤝 Become a volunteer
     </div>
 </div>
 
-<div class="hero-slider" id="home">
-    <div class="slider-container" id="sliderContainer">
+<!-- Hero Slider -->
+<div class="hero" id="home">
+    <div class="slider-container" id="heroSlider">
         <div class="slide active" style="background-image: url('IMG_20180708_142446-1.jpg');"></div>
         <div class="slide" style="background-image: url('images/IMG-20260508-WA001.jpg');"></div>
-        <div class="slide" style="background-image: url('images/SACE MAGAZINE_260318_204304_11.jpg');"></div>
-        <div class="slide" style="background-image: url('IMG_20180708_125233-1.jpg');"></div>
-        <div class="slide" style="background-image: url('images/IMG-20260508-WA002.jpg');"></div>
+        <div class="slide" style="background-image: url('images/SACE MAGAZINE_260318_204304_111.jpg');"></div>
+        <div class="slide" style="background-image: url('IMG_20180708_125233-12.jpg');"></div>
+        <div class="slide" style="background-image: url('IMG_20180708_125233-10.jpg');"></div>
+        <div class="slide" style="background-image: url('IMG_20180708_125233-13.jpg');"></div>
+        <div class="slide" style="background-image: url('IMG_20180708_125233-14.jpg');"></div>
+        <div class="slide" style="background-image: url('IMG_20180708_125233-15.jpg');"></div>
+        <div class="slide" style="background-image: url('IMG_20180708_125233-16.jpg');"></div>
     </div>
     <div class="hero-content">
         <h1>Stride Action Community Empowerment</h1>
-        
+        <p>Transforming lives in Uganda through education, health, and sustainable livelihoods. Together, we rise.</p>
         <div style="display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;">
-            <a href="#contact" class="btn" style="background: var(--accent); color: var(--dark); padding: 12px 32px; border-radius: 60px; font-weight: 800;">Join Movement</a>
-            <a href="#donate" class="btn" style="background: transparent; border: 2px solid white; padding: 12px 32px; border-radius: 60px; font-weight: 700;">Support Us</a>
+            <a href="#contact" style="background: var(--accent); color: var(--dark); padding: 12px 32px; border-radius: 60px; font-weight: 800; text-decoration: none;">Get Involved</a>
+            <a href="#donate-section" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); border: 1px solid white; padding: 12px 32px; border-radius: 60px; font-weight: 700; text-decoration: none; color: white;">Donate Now</a>
         </div>
     </div>
-    <div class="slider-controls" id="sliderDots"></div>
+    <div class="slider-dots" id="dotsContainer"></div>
 </div>
-<img src="images/SACE MAGAZINE_260318_204304_1.jpg" alt="saceprofile" height="500" width="400">
-<section id="about"><div class="container"><h2 class="section-title">About SACE</h2><div class="boxes"><div class="box fade-up"><i class="fas fa-hand-holding-heart"></i><h3>Our Mission</h3><p>Empower communities through education, human rights advocacy, health education and poverty alleviation for lasting positive change.</p></div><div class="box fade-up"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>A world free of health and socio-economic injustices where every community thrives sustainably.</p></div><div class="box fade-up"><i class="fas fa-leaf"></i><h3>Philosophy</h3><p>Youth & women are the foundation of socio-economic development driving change multi-dimensionally.</p></div><div class="box fade-up"><i class="fas fa-calendar-alt"></i><h3>History</h3><p>Founded in 2017, SACE has grown into a recognized force for community empowerment across West Nile of Uganda.</p></div></div></div></section>
 
-<section id="services" style="background: #FEF7E8;"><div class="container"><h2 class="section-title">What We Do</h2><div class="boxes"><div class="box fade-up"><i class="fas fa-chalkboard-user"></i><h3>Education Support</h3><p>Scholarships, learning materials, and after-school mentorship for underprivileged children.</p></div><div class="box fade-up"><i class="fas fa-stethoscope"></i><h3>Health Awareness</h3><p>Medical camps, hygiene campaigns, and disease prevention workshops in remote areas.</p></div><div class="box fade-up"><i class="fas fa-laptop-code"></i><h3>Youth Empowerment</h3><p>Digital skills, entrepreneurship bootcamps, leadership training and job linkages.</p></div></div></div></section>
+<!-- Impact counters -->
+<section class="impact-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div><div class="stat-number" data-target="500">0</div><p>Children Supported</p></div>
+            <div><div class="stat-number" data-target="94">0</div><p>Projects Realized</p></div>
+            <div><div class="stat-number" data-target="150">0</div><p>Youth Empowered</p></div>
+            <div><div class="stat-number" data-target="52">0</div><p>Communities Reached</p></div>
+        </div>
+    </div>
+</section>
 
-<section id="projects"><div class="container"><h2 class="section-title">Flagship Projects</h2><div class="boxes"><div class="box fade-up"><i class="fas fa-school"></i><h3>School Infrastructure</h3><p>Building classrooms and libraries in underserved communities, improving learning environments.</p></div><div class="box fade-up"><i class="fas fa-globe-africa"></i><h3>Community Cleanups</h3><p>Eco-warriors program: recycling drives and sanitation campaigns for greener future.</p></div><div class="box fade-up"><i class="fas fa-hands-helping"></i><h3>Skills for Livelihoods</h3><p>Tailoring, carpentry, and agribusiness training enabling economic independence.</p></div></div></div></section>
+<!-- About -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About SACE</h2>
+        <div class="grid-cards">
+            <div class="card fade-up"><i class="fas fa-hand-holding-heart"></i><h3>Our Mission</h3><p>Empower Ugandan communities through education, human rights, health access and poverty alleviation.</p></div>
+            <div class="card fade-up"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>A world free from health and socio-economic injustices where communities thrive sustainably.</p></div>
+            <div class="card fade-up"><i class="fas fa-leaf"></i><h3>Philosophy</h3><p>Youth & women are the core drivers of socio-economic development and lasting change.</p></div>
+            <div class="card fade-up"><i class="fas fa-calendar-alt"></i><h3>History</h3><p>Founded in 2017, SACE has become a leading force for community transformation across West Nile, Uganda.</p></div>
+        </div>
+    </div>
+</section>
 
-<!-- ED'S MESSAGE SECTION -->
-<section id="ed-message" style="background: #F5FBFE;"><div class="container"><h2 class="section-title">A Word from Executive Director</h2><div class="ed-message-container fade-up"><div class="ed-image"><img src="images/SACE MAGAZINE_ED 1.jpg" alt="Ed - Community Advocate" onerror="this.src='https://via.placeholder.com/160?text=Ed'"></div><div class="ed-content"><h3>ED Tukashaba Felix</h3><div class="ed-title"><i class="fas fa-globe-americas"></i> Executive Director</div><blockquote>“SACE’s commitment to grassroots transformation is unmatched. I have seen firsthand how their education and health programs bring hope to hundreds of families in Arua and WestNile at large. The team’s passion and transparency inspire me to keep supporting their journey. Together, we stride towards a future where every child has a chance.”</blockquote><div class="ed-sign">— ED-SACE </div><div style="margin-top: 0.8rem;"><i class="fas fa-star" style="color: var(--accent);"></i> <i class="fas fa-star" style="color: var(--accent);"></i> <i class="fas fa-star" style="color: var(--accent);"></i> <i class="fas fa-star" style="color: var(--accent);"></i> <i class="fas fa-star" style="color: var(--accent);"></i><br><a href="Ed's Message.html">read more articles &rarr;</a></div></div></div></div></section>
+<!-- Services -->
+<section id="services" style="background: var(--cyan-light);">
+    <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <div class="grid-cards">
+            <div class="card fade-up"><i class="fas fa-chalkboard-user"></i><h3>Education Support</h3><p>Scholarships, school supplies, and after-school mentorship for vulnerable children.</p></div>
+            <div class="card fade-up"><i class="fas fa-stethoscope"></i><h3>Health Awareness</h3><p>Medical outreaches, WASH programs, and reproductive health education in remote areas.</p></div>
+            <div class="card fade-up"><i class="fas fa-laptop-code"></i><h3>Youth Empowerment</h3><p>Digital literacy, entrepreneurship bootcamps, and leadership training for economic independence.</p></div>
+        </div>
+    </div>
+</section>
 
-<section id="gallery" style="background: #F0F4FA;"><div class="container"><h2 class="section-title">Moments of Impact</h2><div class="gallery"><div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_7.jpg" alt="Event" onerror="this.src='https://picsum.photos/id/160/400/400'"></div><div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_8.jpg" alt="Community" onerror="this.src='https://picsum.photos/id/160/400/400'"></div><div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_12.jpg" alt="Training" onerror="this.src='https://picsum.photos/id/30/400/400'"></div><div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_11.jpg" alt="Workshop" onerror="this.src='https://picsum.photos/id/26/400/400'"></div><div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_10.jpg" alt="Outreach" onerror="this.src='https://picsum.photos/id/20/400/400'"></div><div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_9.jpg" alt="Youth" onerror="this.src='https://picsum.photos/id/100/400/400'"></div></div></div></section>
+<!-- Projects -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Flagship Projects</h2>
+        <div class="grid-cards">
+            <div class="card fade-up"><i class="fas fa-school"></i><h3>School Infrastructure</h3><p>Built 4 classrooms and libraries, boosting enrollment by 45% in target areas.</p></div>
+            <div class="card fade-up"><i class="fas fa-globe-africa"></i><h3>Eco-Warriors</h3><p>Community cleanups & recycling drives — planting 5,000+ trees across Arua.</p></div>
+            <div class="card fade-up"><i class="fas fa-hands-helping"></i><h3>Skills for Livelihoods</h3><p>Tailoring, shoe making & agribusiness training, 350+ women now running small enterprises.</p></div>
+        </div>
+    </div>
+</section>
 
-<section id="donate"><div class="container"><div class="donation-panel fade-up"><div class="donation-text"><h3><i class="fas fa-hand-holding-usd"></i> Make a Difference Today</h3><p>Your support helps us reach more children, empower women, and create sustainable impact. Every contribution counts.</p></div><button class="donation-btn" id="donateNowBtn"><i class="fas fa-heart"></i> Donate Securely</button></div></div></section>
-
-<section id="contact"><div class="container"><h2 class="section-title">Reach & Volunteer</h2><div class="form-container"><form id="contactForm"><div class="form-row"><div class="form-group"><label>Full Name</label><input type="text" id="fullname" placeholder="Your name" required></div><div class="form-group"><label>Email</label><input type="email" id="email" placeholder="Email" required></div></div><div class="form-group"><label>I want to</label><select id="interest"><option>Volunteer with SACE</option><option>Partner with us</option><option>General inquiry</option><option>Sponsor a child</option></select></div><div class="form-group"><label>Message</label><textarea rows="4" id="message" placeholder="Tell us how you'd like to help..." required></textarea></div><button type="submit">Send Message <i class="fas fa-paper-plane"></i></button><p id="formFeedback" style="margin-top: 1rem; text-align:center; font-weight:500;"></p></form><div class="contact-info" style="margin-top: 2rem; text-align:center;"><p><i class="fas fa-phone-alt"></i> +256 786 561399</p><p><i class="fas fa-envelope"></i> strideactionce@gmail.com | tu.felix3@gmail.com</p><p><i class="fas fa-map-pin"></i> Euata T/C, Ayivu Div, Arua City, Uganda</p><div class="social-links" style="margin-top: 1.2rem;">
-                <a href="https://www.facebook.com/share/1X31PVDRFe/"><i class="fab fa-facebook"></i> SACE</a>
-                <a href="https://x.com/strideaction"><i class="fab fa-twitter"></i> @StrideAction</a>
-                <a href="https://youtube.com/@sace2018?si=b2qDGbklWYuAAjqw"><i class="fab fa-youtube"></i> SACE2018</a>
-                <!-- LinkedIn link: Official SACE LinkedIn profile -->
-                <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> Stride Action</a>
-            </div></div>
-
-            <!-- GOOGLE MAP SECTION -->
-            <div class="map-wrapper fade-up">
-                <iframe 
-                    title="SACE Office Location Map"
-                    loading="lazy"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.448642382855!2d30.90664031475358!3d3.028116597377347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1770c34bb4d5b91f%3A0x2ec7f2b2e0e01d63!2sEuata%20Town%20Council!5e0!3m2!1sen!2sug!4v1711390000000!5m2!1sen!2sug"
-                    allowfullscreen=""
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <div style="text-align:center; padding: 8px 0 4px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; align-items: center;">
-                    <span style="font-size: 0.85rem; background: rgba(10,76,110,0.1); padding: 4px 12px; border-radius: 30px;">
-                         SACE Headquarters Euata Trading Centre, Ayivu Division, Arua City
-                    </span>
-                    <a href="https://maps.app.goo.gl/2yg5up9wXfG6EYFN7?g_st=ac" target="_blank" class="map-link-btn" rel="noopener noreferrer">
-                        <i class="fas fa-directions"></i> Click here to Get Directions to our Office HQs on Google Maps
-                    </a>
-                    
-                       <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="map-link-btn" rel="noopener noreferrer">
-                        <i class="fas fa-directions"></i> Click here to know more about SACE 
-                    </a>
+<!-- ED Message -->
+<section id="ed-message" style="background:lightgreen;">
+    <div class="container">
+        <h2 class="section-title">Executive Director's Word</h2>
+        <div class="ed-message-block fade-up">
+            <div class="ed-img">
+                <img src="images/SACE MAGAZINE_ED 1.jpg" alt="ED Tukashaba Felix" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=ED+Tukashaba'">
+            </div>
+            <div>
+                <h3 style="color: var(--cyan-deep); font-size: 1.8rem;">Tukashaba Felix</h3>
+                <p style="font-weight: 600;"><i class="fas fa-globe-americas"></i> Executive Director, SACE</p>
+                <blockquote style="border-left: 5px solid var(--accent); padding-left: 1.2rem; margin: 1rem 0; font-style: italic;">“I have witnessed the resilience of our communities. From classrooms to health camps, SACE’s holistic model creates generational impact. Together, we stride toward a future where every child has a chance to thrive.”</blockquote>
+                <div>
+                    <i class="fas fa-star" style="color: var(--accent);"></i>
+                    <i class="fas fa-star" style="color: var(--accent);"></i>
+                    <i class="fas fa-star" style="color: var(--accent);"></i>
+                    <i class="fas fa-star" style="color: var(--accent);"></i>
+                    <i class="fas fa-star" style="color: var(--accent);"></i>
+                    <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370" target="_blank" rel="noopener" style="color: var(--cyan-dark); font-weight: 600; margin-left: 10px;">Read our latest articles</a>
                 </div>
             </div>
         </div>
-    </div></section>
+    </div>
+</section>
 
-<footer><div class="footer-content" style="display: flex; flex-direction: column; align-items:center; gap:1rem;"><div class="logo-container"><img src="images/IMG-20260319-WA0027.jpg" style="height:55px; border-radius:50%;" alt="logo" onerror="this.src='https://via.placeholder.com/55'"><h2 style="color:white;">SACE</h2></div><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#ed-message">Ed's Message</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><a href="#donate">Donate</a></div><p style="font-size:0.85rem;">© 2025 Stride Action Community Empowerment — Empowering Futures, Transforming Lives.</p></div></footer>
+<!-- Testimonials -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Stories of Change</h2>
+        <div class="testimonials-grid">
+            <div class="testi-card fade-up"><i class="fas fa-quote-left" style="color: var(--cyan-deep); font-size: 2rem;"></i><p class="mt-2">“SACE paid my school fees when I lost my parents. Now I'm in nursing school — I will give back.”</p><strong>— Annet, Student Beneficiary</strong></div>
+            <div class="testi-card fade-up"><i class="fas fa-quote-left" style="color: var(--cyan-deep); font-size: 2rem;"></i><p class="mt-2">“The tailoring workshop gave me independence. I employ two other women today.”</p><strong>— Rebecca, Entrepreneur</strong></div>
+            <div class="testi-card fade-up"><i class="fas fa-quote-left" style="color: var(--cyan-deep); font-size: 2rem;"></i><p class="mt-2">“Their health outreach saved my son from severe malaria. We are grateful beyond words.”</p><strong>— Joseph, Father of three</strong></div>
+        </div>
+    </div>
+</section>
 
-<a href="https://wa.me/256786561399" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="#donate" class="donate-float"><i class="fas fa-donate"></i></a>
+<!-- Gallery -->
+<section id="gallery" style="background: var(--cyan-light);">
+    <div class="container">
+        <h2 class="section-title">Moments of Impact</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_7.jpg" alt="Community" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=Impact'"></div>
+            <div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_8.jpg" alt="Outreach" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=Outreach'"></div>
+            <div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_12.jpg" alt="Training" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=Skills'"></div>
+            <div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_10.jpg" alt="Health" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=Health'"></div>
+            <div class="gallery-item"><img src="images/SACE MAGAZINE_260318_204304_9.jpg" alt="Education" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=Education'"></div>
+            <div class="gallery-item"><img src="images/IMG-20260508-WA002.jpg" alt="Youth" onerror="this.src='https://placehold.co/400x400/0096c7/white?text=Youth+Empowerment'"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Partners -->
+<div class="partner-section">
+    <div class="container">
+        <h3 style="text-align: center; color: var(--cyan-dark); margin-bottom: 2rem;">Trusted by partners</h3>
+        <div class="partner-logos">
+            <img src="https://placehold.co/140x60/cccccc/333?text=CEHURD" alt="partner">
+            <img src="https://placehold.co/140x60/cccccc/333?text=WASH+UGANDA" alt="partner">
+            <img src="https://placehold.co/140x60/cccccc/333?text=LOCAL+GOVT" alt="partner">
+            <img src="https://placehold.co/140x60/cccccc/333?text=TASO" alt="partner">
+        </div>
+    </div>
+</div>
+
+<!-- Donation Section -->
+<section id="donate-section">
+    <div class="container">
+        <div class="donation-panel fade-up">
+            <div><h3><i class="fas fa-hand-holding-heart"></i> Your support saves lives</h3><p>Every contribution goes directly to education, healthcare, and skills training.</p></div>
+            <button class="btn-donate" id="donateMainBtn">Donate Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Map -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Reach Out & Volunteer</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group"><label>Full name</label><input type="text" id="fullName" required></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="emailContact" required></div>
+                </div>
+                <div class="form-group"><label>Interest</label><select id="interestSelect"><option>Volunteer with SACE</option><option>Partnership inquiry</option><option>Sponsor a child</option><option>General support</option></select></div>
+                <div class="form-group"><label>Message</label><textarea rows="4" id="msgTxt" placeholder="Tell us how you'd like to contribute..."></textarea></div>
+                <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                <p id="formStatus" style="margin-top: 1rem; text-align: center;"></p>
+            </form>
+            <div style="margin-top: 2rem; text-align: center;">
+                <p><i class="fas fa-phone-alt"></i> +256 786 561399</p>
+                <p><i class="fas fa-envelope"></i> strideactionce@gmail.com | tu.felix3@gmail.com</p>
+                <p><i class="fas fa-map-pin"></i> Euata Trading Centre, Ayivu Division, Arua City, Uganda</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://www.facebook.com/share/1X31PVDRFe/" target="_blank" rel="noopener" style="margin:0 10px; color: var(--cyan-deep); font-size: 1.4rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/strideaction" target="_blank" rel="noopener" style="margin:0 10px; color: var(--cyan-deep); font-size: 1.4rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/@sace2018" target="_blank" rel="noopener" style="margin:0 10px; color: var(--cyan-deep); font-size: 1.4rem;"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370" target="_blank" rel="noopener" style="margin:0 10px; color: var(--cyan-deep); font-size: 1.4rem;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.448642382855!2d30.90664031475358!3d3.028116597377347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1770c34bb4d5b91f%3A0x2ec7f2b2e0e01d63!2sEuata%20Town%20Council!5e0!3m2!1sen!2sug!4v1711390000000!5m2!1sen!2sug" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-links">
+                    <a href="https://maps.app.goo.gl/FQJTBp9xDiDamncQ9?g_st=awb" target="_blank" rel="noopener"><i class="fas fa-map-marked-alt"></i> Get Directions to Headquarters</a>
+                    <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> Learn More on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+        <img src="images/IMG-20260319-WA0027.jpg" style="height:55px; border-radius:50%;" onerror="this.src='https://placehold.co/200x200/0096c7/white?text=SACE'">
+        <h2 style="color:white;">SACE</h2>
+    </div>
+    <p>© 2025 Stride Action Community Empowerment — Empowering Futures, Transforming Lives.</p>
+</footer>
+
+<a href="https://wa.me/256786561399" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="#" class="donate-float" id="floatDonateBtn"><i class="fas fa-heart"></i></a>
 
 <script>
-    // STAFF DATABASE & ACTIVE SESSIONS
-    const STAFF_DB = [
-        { username: "Moses Karugaba", password: "staff123", role: "Finance officer Kampalaregion", fullName: "Moses K." },
-        { username: "Lekuru Racheal", password: "staff123", role: "operations manager", fullName: "Lekuru R." },
-        { username: "Byaruhanga Benard", password: "staff123", role: "Finance manager", fullName: "Byaruhanga B." },
-        { username: "Henry Mubangizi.", password: "staff123", role: "Coordinator Kampala region", fullName: "Henry Mubangizi." }
-    ];
-    let activeStaffList = [];
-    let currentStaffSession = null;
-    let heartbeatInterval = null;
-    let adminAuthenticated = false;
+    // Hero Slider
+    const slides = document.querySelectorAll('.slide');
+    const dotsDiv = document.getElementById('dotsContainer');
+    let currentIndex = 0, slideInterval;
 
-    function loadActiveStaff() { const stored = localStorage.getItem("sace_active_staff"); if(stored) try { activeStaffList = JSON.parse(stored); } catch(e){} else activeStaffList = []; }
-    function persistActiveStaff() { localStorage.setItem("sace_active_staff", JSON.stringify(activeStaffList)); }
-    function addOrUpdateActiveStaff(staffObj) {
-        const existing = activeStaffList.findIndex(s => s.username === staffObj.username);
-        const now = new Date().toISOString();
-        const entry = { username: staffObj.username, fullName: staffObj.fullName, role: staffObj.role, loginTime: existing>=0 ? activeStaffList[existing].loginTime : now, lastActive: now, status:"active" };
-        if(existing>=0) activeStaffList[existing] = entry; else activeStaffList.push(entry);
-        persistActiveStaff();
-        renderAdminStaffList();
+    function showSlide(index) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === index));
+        currentIndex = index;
+        updateDots();
     }
-    function removeActiveStaff(username) { activeStaffList = activeStaffList.filter(s => s.username !== username); persistActiveStaff(); renderAdminStaffList(); }
-    function updateHeartbeat() { if(currentStaffSession) { const idx = activeStaffList.findIndex(s => s.username === currentStaffSession.username); if(idx!==-1) { activeStaffList[idx].lastActive = new Date().toISOString(); persistActiveStaff(); renderAdminStaffList(); } else if(currentStaffSession) performStaffLogout(); } }
-    function performStaffLogout() { if(currentStaffSession) { removeActiveStaff(currentStaffSession.username); currentStaffSession = null; if(heartbeatInterval) clearInterval(heartbeatInterval); if(document.getElementById("staffModalMsg")) document.getElementById("staffModalMsg").innerHTML = "✅ Logged out."; closeStaffModal(); } }
-    function attemptStaffLogin(username, password) { const found = STAFF_DB.find(s => s.username.toLowerCase()===username.toLowerCase() && s.password===password); if(!found) { document.getElementById("staffModalMsg").innerHTML = "❌ Invalid credentials. Use staff123"; return false; } if(currentStaffSession) removeActiveStaff(currentStaffSession.username); currentStaffSession = { username: found.username, fullName: found.fullName, role: found.role }; addOrUpdateActiveStaff({ username: found.username, fullName: found.fullName, role: found.role }); document.getElementById("staffModalMsg").innerHTML = `✔️ Welcome ${found.fullName}!`; if(heartbeatInterval) clearInterval(heartbeatInterval); heartbeatInterval = setInterval(()=>updateHeartbeat(),15000); closeStaffModal(); return true; }
-    function renderAdminStaffList() { const container = document.getElementById("activeStaffListContainer"); if(!container) return; if(!adminAuthenticated) { container.innerHTML = ""; return; } if(activeStaffList.length===0) { container.innerHTML = "<p>No staff logged in.</p>"; return; } let html = ""; activeStaffList.forEach(s => { const lastActiveShort = new Date(s.lastActive).toLocaleTimeString(); html += `<div class="staff-item"><div><strong>${s.fullName}</strong> (${s.role})<br><span style="font-size:0.7rem;">Last active: ${lastActiveShort}</span></div><div><span class="badge-active">active</span> <button class="force-logout-btn" data-user="${s.username}">Force Logout</button></div></div>`; }); container.innerHTML = html; document.querySelectorAll('.force-logout-btn').forEach(btn => { btn.addEventListener('click', (e) => { const user = btn.getAttribute('data-user'); if(confirm(`Force logout ${user}?`)) { removeActiveStaff(user); if(currentStaffSession && currentStaffSession.username === user) performStaffLogout(); renderAdminStaffList(); } }); }); }
 
-    function openStaffModal() { document.getElementById("staffModal").classList.add("active"); document.getElementById("modalStaffName").value = ""; document.getElementById("modalStaffPass").value = ""; document.getElementById("staffModalMsg").innerHTML = ""; }
-    function closeStaffModal() { document.getElementById("staffModal").classList.remove("active"); }
-    function openAdminModal() { document.getElementById("adminModal").classList.add("active"); document.getElementById("adminAuthArea").style.display = "block"; document.getElementById("adminStaffListArea").style.display = "none"; document.getElementById("adminModalPass").value = ""; adminAuthenticated = false; }
-    function closeAdminModal() { document.getElementById("adminModal").classList.remove("active"); adminAuthenticated = false; }
-    function adminAuthenticate(password) { if(password === "admin123") { adminAuthenticated = true; document.getElementById("adminAuthArea").style.display = "none"; document.getElementById("adminStaffListArea").style.display = "block"; renderAdminStaffList(); } else { alert("Incorrect admin password"); } }
-    function adminLogout() { adminAuthenticated = false; document.getElementById("adminStaffListArea").style.display = "none"; document.getElementById("adminAuthArea").style.display = "block"; closeAdminModal(); }
+    function nextSlide() { showSlide((currentIndex + 1) % slides.length); }
+    function updateDots() {
+        document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active-dot', i === currentIndex));
+    }
 
-    document.getElementById("staffLoginNavBtn").addEventListener("click", (e) => { e.preventDefault(); openStaffModal(); });
-    document.getElementById("adminPanelNavBtn").addEventListener("click", (e) => { e.preventDefault(); openAdminModal(); });
-    document.getElementById("modalStaffLoginBtn").addEventListener("click", () => { const u = document.getElementById("modalStaffName").value.trim(); const p = document.getElementById("modalStaffPass").value.trim(); attemptStaffLogin(u,p); });
-    document.getElementById("adminModalAuthBtn").addEventListener("click", () => { const pwd = document.getElementById("adminModalPass").value; adminAuthenticate(pwd); });
-    document.getElementById("adminLogoutBtn").addEventListener("click", () => { adminLogout(); });
-    loadActiveStaff();
-    if(currentStaffSession) { const exists = activeStaffList.some(s=>s.username===currentStaffSession.username); if(!exists) currentStaffSession=null; else heartbeatInterval=setInterval(()=>updateHeartbeat(),15000); }
+    slides.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (idx === 0) dot.classList.add('active-dot');
+        dot.addEventListener('click', () => { clearInterval(slideInterval); showSlide(idx); slideInterval = setInterval(nextSlide, 5500); });
+        dotsDiv.appendChild(dot);
+    });
+    showSlide(0);
+    slideInterval = setInterval(nextSlide, 5500);
 
-    // Slider logic
-    const slides = document.querySelectorAll('.slide'), dotsContainer = document.getElementById('sliderDots'); let currentSlide = 0, slideInterval;
-    function goToSlide(index) { slides.forEach((s,i)=> s.classList.toggle('active',i===index)); currentSlide=index; updateDots(); }
-    function nextSlide() { goToSlide((currentSlide+1)%slides.length); }
-    function updateDots() { document.querySelectorAll('.slider-dot').forEach((dot,idx)=> dot.classList.toggle('active-dot', idx===currentSlide)); }
-    slides.forEach((_,idx)=>{ const dot=document.createElement('div'); dot.classList.add('slider-dot'); if(idx===0)dot.classList.add('active-dot'); dot.addEventListener('click',()=>{ clearInterval(slideInterval); goToSlide(idx); slideInterval=setInterval(nextSlide,5500); }); dotsContainer.appendChild(dot); });
-    updateDots(); slideInterval=setInterval(nextSlide,5500);
-    window.toggleMenu=function(){ const menu=document.getElementById('menu'); menu.style.display = menu.style.display==='flex' ? 'none' : 'flex'; };
-    document.querySelectorAll('#menu a').forEach(link=>{ link.addEventListener('click',()=>{ if(window.innerWidth<=768) document.getElementById('menu').style.display='none'; }); });
-    const fadeElements=document.querySelectorAll('.fade-up'); const observer=new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); }); },{threshold:0.15}); fadeElements.forEach(el=>observer.observe(el));
-    document.getElementById('contactForm').addEventListener('submit',(e)=>{ e.preventDefault(); const name = document.getElementById('fullname').value.trim(); if(name) { document.getElementById('formFeedback').innerHTML='✅ Thank you, '+name+'! Our team will reach out within 24 hours.'; e.target.reset(); setTimeout(()=>document.getElementById('formFeedback').innerHTML='',5000); } else { document.getElementById('formFeedback').innerHTML='⚠️ Please fill all required fields.'; } });
-    function handleDonate(){ alert('🌍 Thank you for supporting SACE!\n\nBank: FINANCE TRUST BANK\nA/C NUMBER: 500214000904 ARUA BRANCH (STRIDE ACTION COMMUNITY EMPOWERMENT)\nMobile Money: +256 786561399 (Felix)\nTogether we empower communities.'); }
-    document.getElementById('donateNowBtn').addEventListener('click', handleDonate); document.querySelector('.donate-float').addEventListener('click',(e)=>{ e.preventDefault(); handleDonate(); }); document.getElementById('navDonateLink').addEventListener('click',(e)=>{ e.preventDefault(); handleDonate(); });
-    const imgs = document.querySelectorAll('img'); imgs.forEach(img=>{ img.addEventListener('error',function(){ if(!this.dataset.fallback){ this.dataset.fallback='true'; this.src='https://placehold.co/600x400/FF6B35/white?text=SACE'; } }); });
-    window.addEventListener('storage', (e) => { if(e.key === "sace_active_staff") { loadActiveStaff(); if(currentStaffSession && !activeStaffList.some(s=>s.username===currentStaffSession.username)) performStaffLogout(); else if(adminAuthenticated) renderAdminStaffList(); } });
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileBtn.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+    document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', () => { if (window.innerWidth <= 768) navMenu.style.display = 'none'; });
+    });
+
+    // Counters animation
+    const counters = document.querySelectorAll('.stat-number');
+    let counted = false;
+    function startCounters() {
+        if (counted) return;
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            let current = 0;
+            const step = Math.ceil(target / 60);
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.innerText = target.toLocaleString();
+                    clearInterval(timer);
+                } else counter.innerText = current.toLocaleString();
+            }, 25);
+        });
+        counted = true;
+    }
+    const statsSection = document.querySelector('.impact-stats');
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) startCounters();
+    }, { threshold: 0.3 });
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // fade-up
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        if (name) {
+            document.getElementById('formStatus').innerHTML = `✅ Thank you, ${name}! We'll get back to you within 24h.`;
+            e.target.reset();
+            setTimeout(() => document.getElementById('formStatus').innerHTML = '', 5000);
+        } else {
+            document.getElementById('formStatus').innerHTML = '⚠️ Please fill all required fields.';
+        }
+    });
+
+    // Donation Alert
+    function showDonation() {
+        alert("🌍 Thank you for supporting SACE!\n\nBank: FINANCE TRUST BANK\nAccount: 500214000904 (STRIDE ACTION COMMUNITY EMPOWERMENT) - Arua Branch\nMobile Money: +256 786561399 (Felix)\nEvery contribution builds brighter futures.");
+    }
+    document.getElementById('donateMainBtn').addEventListener('click', showDonation);
+    document.getElementById('floatDonateBtn').addEventListener('click', (e) => { e.preventDefault(); showDonation(); });
+    document.getElementById('navDonateBtn').addEventListener('click', (e) => { e.preventDefault(); showDonation(); });
+
+    // Image fallback
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            if (!this.dataset.fallback) {
+                this.dataset.fallback = 'true';
+                this.src = 'https://placehold.co/600x400/0096c7/white?text=SACE+Impact';
+            }
+        });
+    });
 </script>
 </body>
-          </html>
+            </html>
