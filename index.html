@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +13,6 @@
     <!-- Google Fonts: Inter + Poppins for modern clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        .image-container{
-            display:flex;
-            flex-direction:row;
-            justify-content:center;
-            align-items:center;
-            gap:20px;
-            flex-wrap:nowrap;
-        }
-        .image-cotent img{
-            max-width:80%
-            width:80px;
-            height:auto;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -33,10 +20,10 @@
         }
 
         :root {
-            --cyan-deep: #f4a261;
+            --cyan-deep: #0096c7;
             --cyan-dark: #023e8a;
-            --cyan-light: #caf0f8;
-            --accent: #f4a261;    /* warm orange accent for contrast */
+            --cyan-light: #e0f7fa;
+            --accent: #f4a261;
             --accent-soft: #ffe8d6;
             --white: #ffffff;
             --gray-50: #f8fafc;
@@ -51,7 +38,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(145deg, #e0f7fa 0%, #1ef 100%);
+            background: var(--white);
             color: var(--dark);
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -166,13 +153,13 @@
             margin-right: 24px;
         }
 
-        /* Hero Slider – Full width with cyan overlay */
+        /* Hero Slider – Full width with transparent overlay to make images clear */
         .hero {
             position: relative;
             width: 100%;
             min-height: 90vh;
             overflow: hidden;
-            background: var(--cyan-deep);
+            background: #1ef;  /* cyan/aqua background behind slider */
         }
 
         .slider-container {
@@ -194,14 +181,12 @@
             z-index: 1;
         }
 
+        /* Removed the dark overlay pseudo-element to let images show clearly */
         .slide::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0, 80, 110, 0.75), rgba(2, 62, 138, 0.85));
-            z-index: 1;
+            display: none;
         }
 
+        /* Add a subtle semi-transparent gradient overlay for text readability, but images remain visible */
         .hero-content {
             position: relative;
             z-index: 10;
@@ -213,6 +198,7 @@
             min-height: 90vh;
             padding: 2rem;
             color: white;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
         }
 
         .hero-content h1 {
@@ -245,7 +231,7 @@
         .dot {
             width: 12px;
             height: 12px;
-            background: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.6);
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s;
@@ -562,6 +548,36 @@
 
         .mt-2 { margin-top: 0.5rem; }
 
+        /* About images container - horizontally centered and flexible */
+        .about-images {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .about-img-item {
+            flex: 0 1 auto;
+            max-width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+        .about-img-item:hover {
+            transform: scale(1.02);
+        }
+        .about-img-item img {
+            width: 100%;
+            height: auto;
+            max-width: 320px;
+            border-radius: 1.5rem;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -581,6 +597,21 @@
             }
             .section-title {
                 font-size: 2rem;
+            }
+            .donation-panel {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .about-img-item img {
+                max-width: 260px;
+            }
+        }
+
+        /* Additional fix for hero content readability */
+        @media (max-width: 640px) {
+            .hero-content {
+                background: radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
             }
         }
     </style>
@@ -613,7 +644,7 @@
     </div>
 </div>
 
-<!-- Hero Slider -->
+<!-- Hero Slider with transparent overlay removed for clear images, background cyan/aqua -->
 <div class="hero" id="home">
     <div class="slider-container" id="heroSlider">
         <div class="slide active" style="background-image: url('IMG_20180708_142446-1.jpg');"></div>
@@ -622,9 +653,9 @@
         <div class="slide" style="background-image: url('IMG_20180708_125233-12.jpg');"></div>
         <div class="slide" style="background-image: url('IMG_20180708_125233-10.jpg');"></div>
         <div class="slide" style="background-image: url('IMG_20180708_125233-13.jpg');"></div>
-        <div class="slide" style="background-image: url('IMG_20180708_125233-14.jpg');"></div>
-        <div class="slide" style="background-image: url('IMG_20180708_125233-15.jpg');"></div>
-        <div class="slide" style="background-image: url('IMG_20180708_125233-16.jpg');"></div>
+        <div class="slide" style="background-image: url('');"></div>
+        <div class="slide" style="background-image: url('');"></div>
+        <div class="slide" style="background-image: url('');"></div>
     </div>
     <div class="hero-content">
         <h1>Stride Action Community Empowerment</h1>
@@ -649,16 +680,18 @@
     </div>
 </section>
 
-<!-- About -->
+<!-- About with two images horizontally fitted & centered -->
 <section id="about">
     <div class="container">
         <h2 class="section-title">About SACE</h2>
-        
-        <div class="image container">
-         <img src="images/SACE MAGAZINE_260318_204304_1.jpg" alt="sace magazine">
-         <img src="images/SACE MAGAZINE_260318_204304_2.jpg" alt="sace magazine">
+        <div class="about-images">
+            <div class="about-img-item">
+                <img src="images/SACE MAGAZINE_260318_204304_1.jpg" alt="sace magazine community" onerror="this.src='https://placehold.co/400x300/0096c7/white?text=SACE+Impact'">
+            </div>
+            <div class="about-img-item">
+                <img src="images/SACE MAGAZINE_260318_204304_2.jpg" alt="sace magazine outreach" onerror="this.src='https://placehold.co/400x300/0096c7/white?text=Community+Work'">
+            </div>
         </div>
-        
         <div class="grid-cards">
             <div class="card fade-up"><i class="fas fa-hand-holding-heart"></i><h3>Our Mission</h3><p>Empower Ugandan communities through education, human rights, health access and poverty alleviation.</p></div>
             <div class="card fade-up"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>A world free from health and socio-economic injustices where communities thrive sustainably.</p></div>
@@ -693,7 +726,7 @@
 </section>
 
 <!-- ED Message -->
-<section id="ed-message" style="background:lightgreen;">
+<section id="ed-message" style="background: #e9f5e9;">
     <div class="container">
         <h2 class="section-title">Executive Director's Word</h2>
         <div class="ed-message-block fade-up">
@@ -710,7 +743,7 @@
                     <i class="fas fa-star" style="color: var(--accent);"></i>
                     <i class="fas fa-star" style="color: var(--accent);"></i>
                     <i class="fas fa-star" style="color: var(--accent);"></i>
-                    <a href="Ed's Message.html" target="_blank" rel="noopener" style="color: var(--cyan-dark); font-weight: 600; margin-left: 10px;">Read our Ed's latest articles</a>
+                    <a href="#" target="_blank" style="color: var(--cyan-dark); font-weight: 600; margin-left: 10px;">Read our Ed's latest articles</a>
                 </div>
             </div>
         </div>
@@ -918,4 +951,5 @@
     });
 </script>
 </body>
-            </html>
+</html>
+            
