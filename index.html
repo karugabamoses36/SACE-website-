@@ -12,6 +12,18 @@
     <!-- Google Fonts: Inter + Poppins for modern clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
+        .image-container{
+            display:flex;
+            justify-content:center;
+            fex-wrap:wrap;
+            gap:20px;
+        }
+        .image-cotent img{
+            max-width:100%;
+            width:200px;
+            border-radius:10px;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -639,9 +651,12 @@
 <section id="about">
     <div class="container">
         <h2 class="section-title">About SACE</h2>
-
+        
+        <div class="image container">
          <img src="images/SACE MAGAZINE_260318_204304_1.jpg" alt="sace magazine">
          <img src="images/SACE MAGAZINE_260318_204304_2.jpg" alt="sace magazine">
+        </div>
+        
         <div class="grid-cards">
             <div class="card fade-up"><i class="fas fa-hand-holding-heart"></i><h3>Our Mission</h3><p>Empower Ugandan communities through education, human rights, health access and poverty alleviation.</p></div>
             <div class="card fade-up"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>A world free from health and socio-economic injustices where communities thrive sustainably.</p></div>
