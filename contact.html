@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact SACE – Stride Action Community Empowerment. Reach us for partnerships, volunteering, sponsorships, and inquiries." />
+    <title>SACE | Contact Us – Stride Action Community Empowerment</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Google Fonts: Inter + Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== RESET & ROOT ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cyan-deep: #0096c7;
+            --cyan-dark:tomato;
+            --cyan-light:#ffffff;
+            --cyan-pale:tomato;
+            --accent: #f4a261;
+            --accent-soft: #ffe8d6;
+            --accent-hover: #e76f51;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e9ecef;
+            --gray-300: #d1d5db;
+            --dark: #1a2c3e;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 30px -12px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 30px 40px -16px rgba(0, 0, 0, 0.15);
+            --radius-xl: 2rem;
+            --radius-lg: 1.25rem;
+            --radius-md: 1rem;
+            --transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(160deg, var(--cyan-pale) 0%, var(--cyan-light) 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(0, 150, 199, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 0.7rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .navbar .logo img {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .navbar .logo h2 {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: var(--accent);
+            color: #fff3e0;
+        }
+
+        .nav-links .active {
+            border-bottom-color: var(--accent);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 6px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline-light:hover {
+            background: var(--white);
+            color: var(--cyan-dark);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--cyan-dark), var(--cyan-deep));
+            padding: 3.5rem 2rem 3rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 280px;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 320px;
+            height: 320px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 span {
+            color: var(--accent);
+        }
+
+        .page-hero p {
+            font-size: 1.15rem;
+            max-width: 620px;
+            margin: 0.8rem auto 0;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== MAIN CONTACT SECTION ===== */
+        .contact-main {
+            flex: 1;
+            padding: 4rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ---- LEFT: CONTACT INFO ---- */
+        .contact-info-panel {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-info-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info-panel h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--cyan-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-info-panel .sub-head {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--gray-200);
+            padding-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .info-item .icon-box {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: linear-gradient(135deg, var(--cyan-light), var(--cyan-pale));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyan-deep);
+            font-size: 1.2rem;
+        }
+
+        .info-item .text h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 0.1rem;
+        }
+
+        .info-item .text p {
+            color: #4a5a6e;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .info-item .text a {
+            color: var(--cyan-deep);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .info-item .text a:hover {
+            color: var(--cyan-dark);
+            text-decoration: underline;
+        }
+
+        /* Social links */
+        .social-section {
+            margin-top: 2rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid var(--gray-200);
+        }
+
+        .social-section p {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--gray-100);
+            color: var(--cyan-dark);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: var(--cyan-deep);
+            color: var(--white);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 150, 199, 0.3);
+        }
+
+        /* ---- RIGHT: CONTACT FORM ---- */
+        .form-panel {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-panel h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--cyan-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .form-panel .sub-head {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px solid var(--gray-200);
+            padding-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            color: var(--dark);
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--gray-50);
+            color: var(--dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cyan-deep);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(0, 150, 199, 0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--cyan-deep), var(--cyan-dark));
+            border: none;
+            border-radius: var(--radius-md);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 150, 199, 0.35);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        #formStatus {
+            margin-top: 1.2rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-status-success {
+            color: #0f7b3a;
+        }
+        .form-status-error {
+            color: #c0392b;
+        }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            margin-top: 2.5rem;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .map-section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 340px;
+            border: 0;
+            display: block;
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, var(--cyan-dark), var(--cyan-deep));
+            border-radius: var(--radius-xl);
+            padding: 2.5rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-banner .cta-text h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-banner .cta-text p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 0.2rem;
+        }
+
+        .cta-banner .cta-btn {
+            background: var(--accent);
+            border: none;
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-banner .cta-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--cyan-dark);
+            color: var(--cyan-light);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 0.6rem;
+        }
+
+        footer .footer-brand img {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+
+        footer .footer-brand h2 {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: var(--cyan-deep);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 2rem;
+                gap: 1.2rem;
+                text-align: center;
+                z-index: 999;
+                border-radius: 0 0 1.5rem 1.5rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 2.5rem 1.5rem 2rem;
+            }
+
+            .contact-main {
+                padding: 2rem 1rem;
+            }
+
+            .contact-info-panel,
+            .form-panel {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .cta-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .map-section iframe {
+                height: 240px;
+            }
+
+            .info-item .icon-box {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .logo h2 {
+                font-size: 1.2rem;
+            }
+
+            .navbar .logo img {
+                height: 38px;
+                width: 38px;
+            }
+
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn-outline-light {
+                padding: 4px 16px;
+                font-size: 0.85rem;
+            }
+
+            .cta-banner .cta-btn {
+                padding: 0.7rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="images/IMG-20260319-WA0027.jpg" alt="SACE Logo" onerror="this.src='https://placehold.co/200x200/0096c7/white?text=SACE'" />
+            <h2>SACE</h2>
+        </a>
+
+        <div class="menu-toggle" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#" class="active">Contact</a></li>
+            <li><a href="#" class="btn-outline-light" id="navDonateBtn"><i class="fas fa-heart" style="margin-right:6px;"></i> Donate</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== HERO BANNER ===== -->
+    <section class="page-hero">
+        <h1>Get in <span>Touch</span></h1>
+        <p>We’d love to hear from you — whether you want to volunteer, partner, sponsor, or simply learn more about our work.</p>
+        <div class="breadcrumb">
+            <a href="#">Home</a> &nbsp;/&nbsp; <span>Contact</span>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="contact-main">
+
+        <div class="contact-grid">
+
+            <!-- LEFT: CONTACT INFO -->
+            <div class="contact-info-panel">
+                <h3>Reach Out</h3>
+                <p class="sub-head">We respond within 24 hours.</p>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                    <div class="text">
+                        <h4>Call us</h4>
+                        <p><a href="tel:+256786561399">+256 786 561399</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <div class="text">
+                        <h4>Email</h4>
+                        <p><a href="mailto:strideactionce@gmail.com">strideactionce@gmail.com</a></p>
+                        <p style="font-size:0.85rem; color:#6b7a8a;"><a href="mailto:tu.felix3@gmail.com">tu.felix3@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fas fa-map-pin"></i></div>
+                    <div class="text">
+                        <h4>Visit us</h4>
+                        <p>Euata Trading Centre, Ayivu Division,<br />Arua City, Uganda</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fas fa-clock"></i></div>
+                    <div class="text">
+                        <h4>Office Hours</h4>
+                        <p>Mon – Fri: 8:00 AM – 5:00 PM (EAT)</p>
+                    </div>
+                </div>
+
+                <div class="social-section">
+                    <p>Connect with us</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1X31PVDRFe/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/strideaction" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://youtube.com/@sace2018" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/256786561399" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: CONTACT FORM -->
+            <div class="form-panel">
+                <h3>Send a Message</h3>
+                <p class="sub-head">We’ll get back to you promptly.</p>
+
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full name <span class="required">*</span></label>
+                            <input type="text" id="fullName" placeholder="e.g. Grace Akech" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailContact">Email address <span class="required">*</span></label>
+                            <input type="email" id="emailContact" placeholder="you@example.com" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneContact">Phone number</label>
+                        <input type="tel" id="phoneContact" placeholder="+256 700 000 000" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interestSelect">I’m interested in <span class="required">*</span></label>
+                        <select id="interestSelect" required>
+                            <option value="">— Select an option —</option>
+                            <option value="volunteer">Volunteering with SACE</option>
+                            <option value="partnership">Partnership inquiry</option>
+                            <option value="sponsor">Sponsoring a child</option>
+                            <option value="donation">Making a donation</option>
+                            <option value="media">Media / Press inquiry</option>
+                            <option value="other">General support / Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msgTxt">Your message <span class="required">*</span></label>
+                        <textarea id="msgTxt" rows="4" placeholder="Tell us how you'd like to contribute or what you need…" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+
+                    <div id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ===== MAP ===== -->
+        <div class="map-section">
+            <iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.448642382855!2d30.90664031475358!3d3.028116597377347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1770c34bb4d5b91f%3A0x2ec7f2b2e0e01d63!2sEuata%20Town%20Council!5e0!3m2!1sen!2sug!4v1711390000000!5m2!1sen!2sug"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="SACE location map"
+        ></iframe>
+              <a href="https://maps.app.goo.gl/FQJTBp9xDiDamncQ9?g_st=awb"
+    </div>
+
+    <!-- ===== CTA BANNER ===== -->
+    <div class="cta-banner">
+        <div class="cta-text">
+            <h3><i class="fas fa-hand-holding-heart" style="margin-right:10px;"></i>Support our mission</h3>
+            <p>Every contribution builds brighter futures for communities in Uganda.</p>
+        </div>
+        <a href="#" class="cta-btn" id="ctaDonateBtn"><i class="fas fa-heart"></i> Donate Now</a>
+    </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-brand">
+        <img src="images/IMG-20260319-WA0027.jpg" alt="SACE Logo" onerror="this.src='https://placehold.co/200x200/0096c7/white?text=SACE'" />
+        <h2>SACE</h2>
+    </div>
+    <p>&copy; 2025 Stride Action Community Empowerment — Empowering Futures, Transforming Lives.</p>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+    (function() {
+        'use strict';
+
+        // --- Mobile Menu Toggle ---
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('open');
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+
+        // Close menu on link click (mobile)
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('open');
+                    const icon = mobileBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // --- Contact Form Handler ---
+        const form = document.getElementById('contactForm');
+        const statusEl = document.getElementById('formStatus');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('emailContact').value.trim();
+            const interest = document.getElementById('interestSelect').value;
+            const message = document.getElementById('msgTxt').value.trim();
+
+            // Simple validation
+            if (!name || !email || !interest || !message) {
+                statusEl.textContent = '⚠️ Please fill in all required fields.';
+                statusEl.className = 'form-status-error';
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                statusEl.textContent = '⚠️ Please enter a valid email address.';
+                statusEl.className = 'form-status-error';
+                return;
+            }
+
+            // Simulate sending
+            statusEl.textContent = '⏳ Sending message…';
+            statusEl.className = '';
+
+            setTimeout(function() {
+                statusEl.innerHTML = '✅ Thank you, <strong>' + name + '</strong>! We\'ll get back to you within 24 hours.';
+                statusEl.className = 'form-status-success';
+                form.reset();
+                // Clear success after 6 seconds
+                setTimeout(function() {
+                    statusEl.textContent = '';
+                    statusEl.className = '';
+                }, 6000);
+            }, 1200);
+        });
+
+        // --- Donation Alert ---
+        function showDonation() {
+            alert(
+                '🌍 Thank you for supporting SACE!\n\n' +
+                'Bank: FINANCE TRUST BANK\n' +
+                'Account: 500214000904 (STRIDE ACTION COMMUNITY EMPOWERMENT) — Arua Branch\n\n' +
+                'Mobile Money: +256 786561399 (Felix)\n\n' +
+                'Every contribution builds brighter futures.'
+            );
+        }
+
+        const donateBtns = [
+            document.getElementById('navDonateBtn'),
+            document.getElementById('ctaDonateBtn')
+        ];
+
+        donateBtns.forEach(function(btn) {
+            if (btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showDonation();
+                });
+            }
+        });
+
+        // --- Image fallback ---
+        document.querySelectorAll('img').forEach(function(img) {
+            img.addEventListener('error', function() {
+                if (!this.dataset.fallback) {
+                    this.dataset.fallback = 'true';
+                    this.src = 'https://placehold.co/200x200/0096c7/white?text=SACE';
+                }
+            });
+        });
+
+    })();
+</script>
+
+</body>
+</html>

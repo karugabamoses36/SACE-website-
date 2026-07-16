@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SACE Services | Stride Action Community Empowerment</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts: Inter + Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ───────────── RESET & ROOT ───────────── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cyan-deep: #33ccff;
+            --cyan-dark: #023e8a;
+            --cyan-light: #33ccff;
+            --accent:#f4a261;
+            --accent-soft: #ffe8d6;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-200: #e9ecef;
+            --dark: #1a2c3e;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 30px -12px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 30px 40px -16px rgba(0, 0, 0, 0.15);
+            --radius-xl: 2rem;
+            --radius-lg: 1.25rem;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-50);
+            color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ───────────── HEADER / NAV ───────────── */
+        nav {
+            background: linear-gradient(90deg, #023e8a, #0096c7);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 52px;
+            width: 52px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .logo h2 {
+            color: white;
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: var(--accent);
+            color: #fff3e0;
+        }
+
+        .nav-links a.active {
+            border-bottom-color: var(--accent);
+        }
+
+        .donate-nav {
+            background: var(--accent);
+            color: var(--dark) !important;
+            padding: 8px 24px !important;
+            border-radius: 40px;
+            font-weight: 800;
+            border: none;
+        }
+
+        .donate-nav:hover {
+            background: #e76f51;
+            transform: translateY(-2px);
+            border-bottom: none !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ───────────── PAGE HERO ───────────── */
+        .page-hero {
+            background: linear-gradient(135deg, var(--cyan-dark), var(--cyan-deep));
+            color: white;
+            padding: 5rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 span {
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 1.8rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* ───────────── SECTION TITLES ───────────── */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--cyan-dark);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            width: 90px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--cyan-deep), var(--accent));
+            display: block;
+            margin: 1rem auto 0;
+            border-radius: 10px;
+        }
+
+        .section-title.light {
+            color: white;
+        }
+
+        .section-title.light:after {
+            background: linear-gradient(90deg, var(--accent), #fff);
+        }
+
+        /* ───────────── SERVICES OVERVIEW ───────────── */
+        section {
+            padding: 5rem 0;
+        }
+
+        section.alt-bg {
+            background: var(--white);
+        }
+
+        /* ── Service Cards Grid ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 150, 199, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--cyan-deep), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card .icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--cyan-light), var(--cyan-deep));
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--cyan-dark);
+        }
+
+        .service-card p {
+            color: #4a5b6e;
+            margin-bottom: 1rem;
+        }
+
+        .service-card .tag {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .service-card .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1.2rem;
+            font-weight: 700;
+            color: var(--cyan-deep);
+            transition: gap 0.3s ease;
+        }
+
+        .service-card .learn-more i {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card .learn-more:hover {
+            gap: 14px;
+        }
+
+        .service-card .learn-more:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ───────────── CATEGORY SECTIONS ───────────── */
+        .category-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .category-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .category-text {
+            flex: 1 1 45%;
+        }
+
+        .category-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cyan-dark);
+            margin-bottom: 1rem;
+        }
+
+        .category-text .subhead {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .category-text ul {
+            list-style: none;
+            margin-top: 1.2rem;
+        }
+
+        .category-text ul li {
+            padding: 0.6rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .category-text ul li:last-child {
+            border-bottom: none;
+        }
+
+        .category-text ul li i {
+            color: var(--cyan-deep);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .category-image {
+            flex: 1 1 40%;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--cyan-light);
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--cyan-deep), var(--cyan-dark));
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 260px;
+        }
+
+        /* ───────────── IMPACT STATS (mini) ───────────── */
+        .stats-ribbon {
+            background: linear-gradient(125deg, var(--cyan-dark), var(--cyan-deep));
+            padding: 3rem 0;
+            color: white;
+        }
+
+        .stats-ribbon .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stats-ribbon .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* ───────────── CTA ───────────── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-soft), #fff);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--cyan-dark);
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+            color: #3a4b5e;
+        }
+
+        .btn-primary {
+            background: var(--cyan-deep);
+            color: white;
+            padding: 1rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(0, 150, 199, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--cyan-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 150, 199, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 1rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-secondary:hover {
+            background: #e76f51;
+            transform: translateY(-3px);
+        }
+
+        /* ───────────── FOOTER ───────────── */
+        footer {
+            background: var(--cyan-dark);
+            color: #caf0f8;
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+        }
+
+        footer .logo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        footer .logo-wrap img {
+            height: 52px;
+            width: 52px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+        }
+
+        footer .logo-wrap h2 {
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+        }
+
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+
+        footer .social-links a {
+            color: #caf0f8;
+            font-size: 1.4rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem 2.5rem;
+            margin: 1.2rem 0;
+        }
+
+        footer .footer-links a {
+            color: #caf0f8;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        footer .copy {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        /* ───────────── RESPONSIVE ───────────── */
+        @media (max-width: 992px) {
+            .category-block {
+                flex-direction: column !important;
+            }
+            .category-text,
+            .category-image {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: var(--cyan-deep);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 2rem;
+                gap: 1.2rem;
+                text-align: center;
+                z-index: 999;
+                box-shadow: var(--shadow-md);
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .page-hero {
+                padding: 3.5rem 0;
+            }
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-ribbon .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .stats-ribbon .grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+
+        /* ───────────── UTILITY ───────────── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 1.5rem;
+        }
+
+        .gap-1 {
+            gap: 1rem;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ─── NAVIGATION ─── -->
+    <nav>
+        <div class="logo">
+            <img src="images/IMG-20260319-WA0027.jpg" alt="SACE Logo" onerror="this.src='https://placehold.co/200x200/0096c7/white?text=SACE'" />
+            <h2>SACE</h2>
+        </div>
+        <div class="menu-toggle" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services" class="active">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="donate-nav" id="navDonateBtn">Donate</a></li>
+        </ul>
+    </nav>
+
+    <!-- ─── PAGE HERO ─── -->
+    <header class="page-hero">
+        <div class="container">
+            <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</p>
+            <h1>Our <span>Services</span></h1>
+            <p>Driving sustainable change across Uganda through education, health, youth empowerment, and community-led development.</p>
+        </div>
+    </header>
+
+    <!-- ─── SERVICES OVERVIEW ─── -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="services-grid">
+
+                <!-- 1. Education Support -->
+                <div class="service-card fade-up">
+                    <div class="icon-wrap"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Education Support</h3>
+                    <p>Scholarships, school supplies, and after-school mentorship for vulnerable children, ensuring every child has access to quality learning.</p>
+                    <span class="tag">Active</span>
+                    <a href="#education-detail" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- 2. Health Awareness -->
+                <div class="service-card fade-up">
+                    <div class="icon-wrap"><i class="fas fa-stethoscope"></i></div>
+                    <h3>Health &amp; WASH</h3>
+                    <p>Medical outreaches, water-sanitation-hygiene programs, and reproductive health education reaching remote communities across West Nile.</p>
+                    <span class="tag">Active</span>
+                    <a href="#health-detail" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- 3. Youth Empowerment -->
+                <div class="service-card fade-up">
+                    <div class="icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Youth Empowerment</h3>
+                    <p>Digital literacy, entrepreneurship bootcamps, and leadership training that equip young people with skills for economic independence.</p>
+                    <span class="tag">Active</span>
+                    <a href="#youth-detail" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- 4. School Infrastructure -->
+                <div class="service-card fade-up">
+                    <div class="icon-wrap"><i class="fas fa-school"></i></div>
+                    <h3>School Infrastructure</h3>
+                    <p>Building classrooms, libraries, and learning spaces that boost enrollment and create safe environments for children to thrive.</p>
+                    <span class="tag">Ongoing</span>
+                    <a href="#infra-detail" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- 5. Eco-Warriors -->
+                <div class="service-card fade-up">
+                    <div class="icon-wrap"><i class="fas fa-globe-africa"></i></div>
+                    <h3>Eco-Warriors</h3>
+                    <p>Community cleanups, recycling drives, and tree-planting initiatives — over 5,000 trees planted across Arua for a greener future.</p>
+                    <span class="tag">Active</span>
+                    <a href="#eco-detail" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- 6. Skills for Livelihoods -->
+                <div class="service-card fade-up">
+                    <div class="icon-wrap"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Skills for Livelihoods</h3>
+                    <p>Tailoring, shoemaking, and agribusiness training that empowers women and youth to start small enterprises and break the cycle of poverty.</p>
+                    <span class="tag">Active</span>
+                    <a href="#skills-detail" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── DETAILED CATEGORY BLOCKS ─── -->
+    <section id="education-detail" class="alt-bg">
+        <div class="container">
+            <div class="category-block">
+                <div class="category-text fade-up">
+                    <p class="subhead"><i class="fas fa-graduation-cap"></i> &nbsp;Service Highlight</p>
+                    <h2>📚 Education Support</h2>
+                    <p>We believe education is the cornerstone of lasting change. SACE provides holistic support to children from vulnerable backgrounds, ensuring they stay in school and excel.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Scholarships</strong> — Full and partial tuition for primary &amp; secondary students.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>School supplies</strong> — Books, uniforms, and learning materials delivered termly.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Mentorship</strong> — After-school tutoring and career guidance sessions.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Parent engagement</strong> — Workshops to build supportive home learning environments.</li>
+                    </ul>
+                </div>
+                <div class="category-image" style="background: linear-gradient(135deg, #2b7a62, #1a4f3f);">
+                    <i class="fas fa-book-open-reader" style="font-size: 5rem; opacity: 0.6;"></i>
+                    <!-- fallback: you can replace with an actual image -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="health-detail">
+        <div class="container">
+            <div class="category-block reverse">
+                <div class="category-text fade-up">
+                    <p class="subhead"><i class="fas fa-heartbeat"></i> &nbsp;Service Highlight</p>
+                    <h2>💊 Health &amp; WASH</h2>
+                    <p>Access to healthcare and clean water is a basic right. Our health programs target the most underserved communities in the West Nile region.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Medical outreaches</strong> — Free consultations, malaria testing, and deworming.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>WASH programs</strong> — Borehole drilling, sanitation training, and hygiene promotion.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Reproductive health</strong> — Youth-friendly services and maternal health education.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Community health workers</strong> — Training locals to deliver primary care.</li>
+                    </ul>
+                </div>
+                <div class="category-image" style="background: linear-gradient(135deg, #a45c3b, #6d3a22);">
+                    <i class="fas fa-hand-holding-medical" style="font-size: 5rem; opacity: 0.6;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="youth-detail" class="alt-bg">
+        <div class="container">
+            <div class="category-block">
+                <div class="category-text fade-up">
+                    <p class="subhead"><i class="fas fa-rocket"></i> &nbsp;Service Highlight</p>
+                    <h2>💻 Youth Empowerment</h2>
+                    <p>Young people are the engine of change. We equip them with future-ready skills, entrepreneurship mindsets, and leadership capabilities.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Digital literacy</strong> — Computer skills, coding, and online safety.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Entrepreneurship bootcamps</strong> — Business planning, finance, and marketing.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Leadership training</strong> — Civic engagement, public speaking, and community organizing.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Internship linkages</strong> — Connecting graduates to local employers.</li>
+                    </ul>
+                </div>
+                <div class="category-image" style="background: linear-gradient(135deg, #2a4d69, #16344a);">
+                    <i class="fas fa-users-gear" style="font-size: 5rem; opacity: 0.6;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="infra-detail">
+        <div class="container">
+            <div class="category-block reverse">
+                <div class="category-text fade-up">
+                    <p class="subhead"><i class="fas fa-building-columns"></i> &nbsp;Service Highlight</p>
+                    <h2>🏢 School Infrastructure</h2>
+                    <p>A conducive learning environment is essential for quality education. We build and renovate schools to create safe, inspiring spaces for children.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Classroom construction</strong> — 4 new classrooms completed, boosting enrollment by 45%.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Libraries</strong> — Stocked with books and reading materials for all ages.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Sanitary facilities</strong> — Gender-separated latrines with handwashing stations.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Playgrounds</strong> — Safe spaces for recreation and sports.</li>
+                    </ul>
+                </div>
+                <div class="category-image" style="background: linear-gradient(135deg, #4a6d7c, #1f3b47);">
+                    <i class="fas fa-school" style="font-size: 5rem; opacity: 0.6;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eco-detail" class="alt-bg">
+        <div class="container">
+            <div class="category-block">
+                <div class="category-text fade-up">
+                    <p class="subhead"><i class="fas fa-tree"></i> &nbsp;Service Highlight</p>
+                    <h2>🌍 Eco-Warriors</h2>
+                    <p>Environmental sustainability is at the heart of our work. We mobilize communities to take action against climate change and protect natural resources.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Tree planting</strong> — 5,000+ trees planted across Arua and surrounding districts.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Cleanup campaigns</strong> — Monthly community cleanups and recycling drives.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Environmental education</strong> — Workshops on waste management and conservation.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Climate advocacy</strong> — Youth-led campaigns for policy change.</li>
+                    </ul>
+                </div>
+                <div class="category-image" style="background: linear-gradient(135deg, #3d6b4f, #1f3d2b);">
+                    <i class="fas fa-leaf" style="font-size: 5rem; opacity: 0.6;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-detail">
+        <div class="container">
+            <div class="category-block reverse">
+                <div class="category-text fade-up">
+                    <p class="subhead"><i class="fas fa-scroll"></i> &nbsp;Service Highlight</p>
+                    <h2>🧵 Skills for Livelihoods</h2>
+                    <p>Economic empowerment starts with practical skills. We provide hands-on vocational training that enables women and youth to build sustainable livelihoods.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Tailoring &amp; fashion</strong> — Sewing, design, and small-business management.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Shoemaking</strong> — Crafting durable footwear for local markets.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Agribusiness</strong> — Sustainable farming, poultry, and value addition.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Business mentorship</strong> — 350+ women now running their own enterprises.</li>
+                    </ul>
+                </div>
+                <div class="category-image" style="background: linear-gradient(135deg, #b5653b, #7a3f1f);">
+                    <i class="fas fa-scissors" style="font-size: 5rem; opacity: 0.6;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── IMPACT RIBBON ─── -->
+    <div class="stats-ribbon">
+        <div class="container">
+            <div class="grid">
+                <div><span class="number">500+</span><p>Children Supported</p></div>
+                <div><span class="number">94</span><p>Projects Realized</p></div>
+                <div><span class="number">150+</span><p>Youth Empowered</p></div>
+                <div><span class="number">52</span><p>Communities Reached</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── CTA SECTION ─── -->
+    <div class="cta-section">
+        <div class="container">
+            <h2>Ready to make a difference?</h2>
+            <p>Your support — whether through volunteering, donating, or partnering — fuels our mission to empower communities across Uganda.</p>
+            <div class="flex-center gap-1" style="gap: 1rem;">
+                <a href="#contact" class="btn-primary"><i class="fas fa-hand-peace"></i> Volunteer With Us</a>
+                <a href="#" class="btn-secondary" id="ctaDonateBtn"><i class="fas fa-heart"></i> Donate Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── CONTACT / FOOTER ─── -->
+    <footer id="contact">
+        <div class="container">
+            <div class="logo-wrap">
+                <img src="images/IMG-20260319-WA0027.jpg" alt="SACE Logo" onerror="this.src='https://placehold.co/200x200/0096c7/white?text=SACE'" />
+                <h2>SACE</h2>
+            </div>
+            <p style="max-width: 500px; margin: 0 auto 0.5rem;">
+                <i class="fas fa-map-pin"></i> Euata Trading Centre, Ayivu Division, Arua City, Uganda
+            </p>
+            <p>
+                <i class="fas fa-phone"></i> +256 786 561399 &nbsp;·&nbsp;
+                <i class="fas fa-envelope"></i> strideactionce@gmail.com
+            </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1X31PVDRFe/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/strideaction" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/@sace2018" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/stride-action-community-empowerment-082737370" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="copy">
+                &copy; 2025 Stride Action Community Empowerment — Empowering Futures, Transforming Lives.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── FLOATING DONATE ─── -->
+    <a href="#" class="donate-float" id="floatDonateBtn" style="position:fixed; bottom:30px; right:30px; width:56px; height:56px; background:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; color:var(--dark); box-shadow:0 8px 20px rgba(0,0,0,0.25); z-index:999; text-decoration:none;">
+        <i class="fas fa-heart"></i>
+    </a>
+
+    <!-- ─── SCRIPTS ─── -->
+    <script>
+        // ── Mobile Menu ──
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        mobileBtn.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) navMenu.style.display = 'none';
+            });
+        });
+
+        // ── Fade-up on scroll ──
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+        fadeEls.forEach(el => fadeObserver.observe(el));
+
+        // ── Donation alert ──
+        function showDonation() {
+            alert(
+                "🌍 Thank you for supporting SACE!\n\n" +
+                "Bank: FINANCE TRUST BANK\n" +
+                "Account: 500214000904 (STRIDE ACTION COMMUNITY EMPOWERMENT) - Arua Branch\n\n" +
+                "Mobile Money: +256 786561399 (Felix)\n\n" +
+                "Every contribution builds brighter futures."
+            );
+        }
+
+        document.getElementById('navDonateBtn').addEventListener('click', (e) => { e.preventDefault();
+            showDonation(); });
+        document.getElementById('ctaDonateBtn').addEventListener('click', (e) => { e.preventDefault();
+            showDonation(); });
+        document.getElementById('floatDonateBtn').addEventListener('click', (e) => { e.preventDefault();
+            showDonation(); });
+
+        // ── Image fallback ──
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                if (!this.dataset.fallback) {
+                    this.dataset.fallback = 'true';
+                    this.src = 'https://placehold.co/600x400/0096c7/white?text=SACE+Impact';
+                }
+            });
+        });
+
+        // ── Smooth anchor scroll ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
